@@ -7,12 +7,13 @@ function getRepositories(){
 
   const req = new XMLHttpRequest();
 
-  req.addEventListener('load', displayCommits)
+  req.addEventListener('load', displayRepositories)
   req.open('GET', baseURL)
   req.send()
   return false;
 }
-function displayCommits(event, data){
+
+function displayRepositories(event, data){
   let repos = JSON.parse(this.responseText)
 
   const repoList = "<ul>" + repos.map(repo =>{
@@ -25,4 +26,18 @@ function displayCommits(event, data){
     )
   }).join('') + "</ul>"
   document.getElementById('repositories').innerHTML = repoList;
+}
+
+
+function getCommits(element){
+  const repoName = element.dataset.repository;
+  const userName = element.dataset.username;
+  const commitsURL = `${baseURL}/repos/${userName}/${repoName}/commits`
+
+  const req = new XMLHttpRequest;
+
+  creq.addEventListener('load', displayCommits)
+  req.open('GET', commitsURL)
+  req.send()
+
 }
