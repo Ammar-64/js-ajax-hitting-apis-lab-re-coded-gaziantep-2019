@@ -55,5 +55,5 @@ function displayCommits(){
         </li>`
       )
   }).join('')+ "</ul>"
-  document.getElementById('details').innerHTML = commitsList;
+  document.getElementById('details').innerHTML = commitList;
 }
