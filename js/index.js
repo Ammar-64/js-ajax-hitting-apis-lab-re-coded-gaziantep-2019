@@ -3,7 +3,7 @@ const baseURL = "https://api.github.com"
 
 function getRepositories(){
   let userName = document.getElementById('username').value;
-  let repoURL = baseURL+"/users/"+userName+"/repos"
+  let repoURL = baseURL+"/users/octocat/repos"
 
   const req = new XMLHttpRequest();
 
