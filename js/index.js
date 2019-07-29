@@ -39,5 +39,21 @@ function getCommits(element){
   creq.addEventListener('load', displayCommits)
   req.open('GET', commitsURL)
   req.send()
+}
 
+function displayCommits(){
+  const commits = JSON.parse(this.responseText);
+
+  const commitList = "<ul>" + commits.map(commit =>{
+      const commitAuthor = commit['author']['login'];
+      const commitAuthorName = commit['commit']['autor']['name'];
+      const commitMessage = commit['commit']['message'];
+      return (
+        `<li>
+        <span><strong>Author's Name:</strong> ${commitAuthorName}</span>
+        <span><strong>${commitAuthor}</storng> - ${commitMessage}</span>
+        </li>`
+      )
+  }).join('')+ "</ul>"
+  document.getElementById('details').innerHTML = commitsList;
 }
