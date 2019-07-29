@@ -57,3 +57,16 @@ function displayCommits(){
   }).join('')+ "</ul>"
   document.getElementById('details').innerHTML = commitList;
 }
+
+function getCommits(element){
+  const repoName = element.dataset.repository;
+  const userName = element.dataset.username;
+  const branchesURL = `${baseURL}/repos/${userName}/${repoName}/branches`
+
+  const req = new XMLHttpRequest;
+
+  req.addEventListener('load', displayBranches)
+  req.open('GET', commitsURL)
+  req.send()
+}
+
