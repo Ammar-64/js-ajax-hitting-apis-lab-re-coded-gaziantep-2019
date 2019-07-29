@@ -36,7 +36,7 @@ function getCommits(element){
 
   const req = new XMLHttpRequest;
 
-  creq.addEventListener('load', displayCommits)
+  req.addEventListener('load', displayCommits)
   req.open('GET', commitsURL)
   req.send()
 }
