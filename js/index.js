@@ -66,6 +66,19 @@ function getCommits(element){
   const req = new XMLHttpRequest;
 
   req.addEventListener('load', displayBranches)
-  req.open('GET', commitsURL)
+  req.open('GET', branchesURL)
   req.send()
+}
+
+function displayBranches(){
+  const branches = JSON.parse(this.responseText);
+
+  const commitList = "<ul>" + branches.map(branch => {
+      return (
+        `<li>
+        ${branch.name}
+        </li>`
+      )
+  }).join('')+ "</ul>"
+  document.getElementById('details').innerHTML = commitList;
 }
