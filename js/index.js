@@ -44,7 +44,7 @@ function getCommits(element){
 function displayCommits(){
   const commits = JSON.parse(this.responseText);
 
-  const commitList = "<ul>" + commits.map(commit =>{
+  const commitList = "<ul>" + commits.map(commit => {
       const commitAuthor = commit['author']['login'];
       const commitAuthorName = commit['commit']['autor']['name'];
       const commitMessage = commit['commit']['message'];
