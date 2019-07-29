@@ -69,4 +69,3 @@ function getCommits(element){
   req.open('GET', commitsURL)
   req.send()
 }
-
