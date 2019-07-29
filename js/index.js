@@ -8,7 +8,7 @@ function getRepositories(){
   const req = new XMLHttpRequest();
 
   req.addEventListener('load', displayRepositories)
-  req.open('GET', `${baseURL}`)
+  req.open('GET', baseURL)
   req.send()
 
 }
