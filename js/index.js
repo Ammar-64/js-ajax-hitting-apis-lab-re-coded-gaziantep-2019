@@ -10,7 +10,7 @@ function getRepositories(){
   req.addEventListener('load', displayRepositories)
   req.open('GET', baseURL)
   req.send()
-  return false;
+
 }
 
 function displayRepositories(event, data){
